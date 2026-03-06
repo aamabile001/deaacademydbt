@@ -20,6 +20,9 @@ models:
     description: "DBT Model for the customer table"
   - name: customer_vw
     description: "DBT Model for the customer view"
+  - name: sales
+    description: "DBT Model for the sales table"
+
 
 sources:
   - name: employee
@@ -32,3 +35,8 @@ sources:
     schema: PUBLIC
     tables:
       - name: CUSTOMER_SRC
+  - name: sales
+    database: DBT_DB
+    schema: PUBLIC
+    tables:
+      - name: SALES_SRC
