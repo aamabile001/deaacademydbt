@@ -32,7 +32,10 @@ models:
     description: "DBT Model for the final orders table"
   - name: session
     description: "DBT Model for the session table"
-
+  - name: concat_name
+    description: "DBT Model for concat name"
+  - name: concat_address
+    description: "DBT Model for concat adress"
 sources:
   - name: employee
     database: DBT_DB
