@@ -11,19 +11,19 @@
 
 
 
--- with src as (
-SELECT * FROM {{source('patient','PATIENT_SRC')}} where DBT_VALID_TO IS NULL
--- ),
+with src as (
+-- SELECT * FROM {{source('patient','PATIENT_SRC')}} where DBT_VALID_TO IS NULL
+),
 
--- deduped as (
---     select *
---     from src
---     qualify row_number() over (
---         partition by PATIENT_ID
---         order by CREATED_AT DESC
---     ) = 1
--- )
+deduped as (
+    select *
+    from src
+    qualify row_number() over (
+        partition by PATIENT_ID
+        order by CREATED_AT DESC
+    ) = 1
+)
 
--- select * from deduped
+select * from deduped
 
 {% endsnapshot %}
