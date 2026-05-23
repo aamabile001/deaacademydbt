@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: BRONZE
+    database: WALMART_DB
+    schema: BRONZE
+    tables:
+      - name: RAW_SALES
+      - name: RAW_STORES
+      - name: RAW_MACRO_DATA
